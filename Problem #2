@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <math.h>
 
-#define pi 3.14159265358979323846
+#define PI 3.14159265358979323846
 
 int main()
 {
     double theta_degrees = 45;
 
-    double theta_radians = pi * theta_degrees / 180.0;
+    double theta_radians = PI * theta_degrees / 180.0;
 
     double ratio_d_lambda = 1 / sin(theta_radians);
 
