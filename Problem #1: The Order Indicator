@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <math.h>
+
+#define NM 1.0e9
+#define M 1.0e6
+#define PI 3.14159265358979323846
+
+int main()
+{
+    double wavelength, theta, d;
+
+    printf("Enter the wavelength (in nm): ");
+    scanf("%lf", &wavelength);
+
+    printf("Enter the angle (in degrees): ");
+    scanf("%lf", &theta);
+
+    printf("Enter the slit separation (in µm): ");
+    scanf("%lf", &d);
+
+    double thetaRad = theta * PI / 180;
+
+    if (wavelength >= 380 && wavelength <= 750)
+    {
+        double lambda = (wavelength / NM);
+        double D = (d / M);
+        double sin_thetaRad = sin(thetaRad);
+        double m = D * sin_thetaRad / lambda;
+
+        printf("%.0lf th order maxima\n", floor(m));
+    }
+    else
+    {
+        printf("Out of the range. Please enter a valid number.\n");
+    }
+
+    return 0;
+}
